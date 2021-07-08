@@ -13,22 +13,24 @@ public class Main
 		int count=0;
 		
 		for(int i=0;i<l;i++){
-		    if(ch[i]==' '){
+		    if(ch[i]==' ' && ch[i-1]!=' '){
 		        count++;
 		    }
 		}
-		
+		System.out.println(count);
 		int k=(count+1);
 		String[] s=new String[k];
 		int j=0;
 		String sr=new String();
 		
 		for(int i=0;i<l;i++){
-		    if(ch[i]==' '){
+		    if(ch[i]==' ' && ch[i-1]!=' '){
+		        //System.out.println(i);
 		        s[j++]=sr;
 		        sr=new String();
 		    }else{
 		        sr+=ch[i];
+		        sr=sr.trim();
 		        //System.out.println(sr);
 
 		    }
